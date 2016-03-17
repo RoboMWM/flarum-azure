@@ -5,11 +5,11 @@
  cd $DEPLOYMENT_TARGET
  echo chmod'ing the following directory
  pwd
- chmod -R 755 .
+ chmod -R 775 .
  ls -a
- chmod -R 755 *
+ chmod -R 775 *
  ls -a
- chmod -R 755 *.*
+ chmod -R 775 *.*
  ls -a
  chmod -R $DEPLOYMENT_TARGET
  
