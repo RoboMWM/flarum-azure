@@ -1,9 +1,20 @@
+#!/bin/bash
+##################################################################################################################################
+ # Download Composer
+ # ----------
+ echo Downloading Composer
+ curl -sS https://getcomposer.org/installer | php
+ 
+ ##################################################################################################################################
+ # Dependency install
+ # ----------
+  
  # Invoke Composer in the deployment directory
  rm -rf $DEPLOYMENT_TARGET
  echo Invoking composer install in deployment directory $DEPLOYMENT_TARGET
- composer create-project flarum/flarum $DEPLOYMENT_TARGET --stability=beta --no-interaction
- cd $DEPLOYMENT_TARGET
- echo chmod'ing the following directory
+ php composer.phar create-project flarum/flarum $DEPLOYMENT_TARGET --stability=beta --no-interaction
+ 
+ echo chmoding the following directory
  pwd
  chmod -R 775 .
  ls -a
