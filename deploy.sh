@@ -12,7 +12,7 @@
  # Invoke Composer in the deployment directory
  rm -rf $DEPLOYMENT_TARGET
  echo Invoking composer install in deployment directory $DEPLOYMENT_TARGET
- php composer.phar create-project flarum/flarum $DEPLOYMENT_TARGET --stability=beta --no-interaction
+ COMPOSER_PROCESS_TIMEOUT=30 php composer.phar create-project flarum/flarum $DEPLOYMENT_TARGET --stability=beta --no-interaction
  
  echo chmoding the following directory
  pwd
